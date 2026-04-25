@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl *)",
+      "WebSearch",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(grep *)",
+      "Read(//Users/kaylemarsh/Desktop/**)",
+      "Bash(python3 *)",
+      "Bash(xxd)"
+    ]
+  }
+}

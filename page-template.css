@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&family=Nanum+Gothic:wght@400;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --surface: #f6f6f6;
+  --border: #e5e5e5;
+  --text: #0d0d0d;
+  --muted: #aaa;
+  --red: #C8102E;
+  --blue: #003478;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-korean: 'Nanum Gothic', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 3rem;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.92);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-korean);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+}
+
+.nav-links { list-style: none; display: flex; gap: 2.5rem; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: var(--font-korean);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a.active,
+.nav-links a:hover { color: var(--text); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--red);
+  transition: width 0.3s;
+}
+.nav-links a.active::after,
+.nav-links a:hover::after { width: 100%; }
+
+.hamburger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; }
+
+/* Page hero */
+.page-hero {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 120px 3rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(200,16,46,0.06) 0%, transparent 65%);
+}
+
+.page-num {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 20vw, 16rem);
+  color: rgba(200,16,46,0.05);
+  pointer-events: none;
+  user-select: none;
+}
+
+.page-title {
+  font-family: var(--font-korean);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 700;
+  color: var(--text);
+  position: relative;
+  z-index: 2;
+  line-height: 1.1;
+}
+
+.page-sub {
+  font-family: var(--font-korean);
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Placeholder */
+.placeholder-section {
+  max-width: 860px;
+  margin: 5rem auto;
+  padding: 0 3rem;
+}
+
+.placeholder-box {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 24px;
+  padding: 5rem 3rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.placeholder-box .ph-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.4; }
+.placeholder-box h3 {
+  font-family: var(--font-korean);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.placeholder-box p { font-family: var(--font-korean); font-size: 0.95rem; line-height: 1.8; }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--red);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-korean);
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+  transition: gap 0.2s;
+}
+.back-link:hover { gap: 0.9rem; }
+
+.footer {
+  text-align: center;
+  padding: 2.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-family: var(--font-korean);
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 1rem 1.5rem; }
+  .nav-links {
+    display: none; flex-direction: column; gap: 1rem;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(255,255,255,0.98);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.open { display: flex; }
+  .hamburger { display: block; }
+  .placeholder-section { padding: 0 1.5rem; }
+  .placeholder-box { padding: 3rem 1.5rem; }
+}
