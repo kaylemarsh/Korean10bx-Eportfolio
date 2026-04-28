@@ -194,3 +194,139 @@ window.addEventListener('scroll', function () {
     if (navAnchors[id]) navAnchors[id].classList.toggle('active', id === active);
   });
 }, { passive: true });
+
+// Reflection drawer toggle
+(function () {
+  var toggle = document.getElementById('reflection-toggle');
+  var drawer = document.getElementById('reflection-drawer');
+  if (!toggle || !drawer) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = drawer.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+  });
+})();
+
+// Artist carousel — 3 cards per slide, 5 slides total
+(function () {
+  var carousel = document.getElementById('artist-carousel');
+  if (!carousel) return;
+
+  var track   = carousel.querySelector('.carousel-track');
+  var slides  = Array.from(carousel.querySelectorAll('.carousel-slide'));
+  var counter = carousel.querySelector('.carousel-counter');
+  var prevBtn = carousel.querySelector('.carousel-prev');
+  var nextBtn = carousel.querySelector('.carousel-next');
+  var total   = slides.length;
+  var current = 0;
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    counter.textContent   = (current + 1) + ' / ' + total;
+  }
+
+  prevBtn.addEventListener('click', function (e) { e.stopPropagation(); goTo(current - 1); });
+  nextBtn.addEventListener('click', function (e) { e.stopPropagation(); goTo(current + 1); });
+
+  // Swipe support
+  var startX = 0;
+  var moved  = false;
+
+  track.addEventListener('mousedown', function (e) {
+    startX = e.clientX;
+    moved  = false;
+    e.preventDefault();
+  });
+  window.addEventListener('mousemove', function (e) {
+    if (!startX) return;
+    if (Math.abs(e.clientX - startX) > 8) moved = true;
+  });
+  window.addEventListener('mouseup', function (e) {
+    if (!startX) return;
+    if (moved) {
+      var delta = e.clientX - startX;
+      if      (delta < -60) goTo(current + 1);
+      else if (delta >  60) goTo(current - 1);
+    }
+    startX = 0;
+    moved  = false;
+  });
+
+  track.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+    moved  = false;
+  }, { passive: true });
+  track.addEventListener('touchmove', function (e) {
+    if (Math.abs(e.touches[0].clientX - startX) > 8) moved = true;
+  }, { passive: true });
+  track.addEventListener('touchend', function (e) {
+    if (moved) {
+      var delta = e.changedTouches[0].clientX - startX;
+      if      (delta < -60) goTo(current + 1);
+      else if (delta >  60) goTo(current - 1);
+    }
+    startX = 0;
+    moved  = false;
+  });
+
+  // Block clicks from reaching the parent flashcard flip handler
+  carousel.addEventListener('click', function (e) { e.stopPropagation(); });
+
+  goTo(0);
+})();
+
+// Hero text scramble — synced pairs
+(function () {
+  var subEl  = document.querySelector('.hero-sub .tw-text');
+  var nameEl = document.querySelector('.hero-name .tw-text');
+  if (!subEl || !nameEl) return;
+
+  var pairs = [
+    ['안녕하세요!', '지성'],
+    ['Hello!',      'Kayle']
+  ];
+
+  var CHARSET  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var DURATION = 1.0;
+  var SPEED    = 0.04;
+  var WAIT     = 2400;
+  var current  = 0;
+
+  function scramble(el, text, onDone) {
+    var steps = Math.round(DURATION / SPEED);
+    var step  = 0;
+    var id    = setInterval(function () {
+      var progress  = step / steps;
+      var out       = '';
+      for (var i = 0; i < text.length; i++) {
+        if (text[i] === ' ') { out += ' '; continue; }
+        out += progress * text.length > i
+          ? text[i]
+          : CHARSET[Math.floor(Math.random() * CHARSET.length)];
+      }
+      el.textContent = out;
+      step++;
+      if (step > steps) {
+        clearInterval(id);
+        el.textContent = text;
+        onDone();
+      }
+    }, SPEED * 1000);
+  }
+
+  function runPair() {
+    var pair = pairs[current];
+    var done = 0;
+    function onDone() {
+      if (++done < 2) return;
+      setTimeout(function () {
+        current = (current + 1) % pairs.length;
+        runPair();
+      }, WAIT);
+    }
+    scramble(subEl,  pair[0], onDone);
+    scramble(nameEl, pair[1], onDone);
+  }
+
+  setTimeout(runPair, 900);
+})()

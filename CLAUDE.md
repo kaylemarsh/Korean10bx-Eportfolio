@@ -57,7 +57,8 @@ Two sub-blocks inside `<section id="interviews">`:
 |---|---|
 | K-Pop | `#FF2D7A` |
 | Hip-Hop | `#FFCF00` |
-| R&B·Latin | `#B44FFF` (Latin accent `#FF7122`) |
+| R&B | `#B44FFF` |
+| Latin | `#FF7122` |
 | Indie | `#4ADE80` |
 | Rock | `#FF4520` |
 | Electronic | `#00CCDD` |
@@ -79,7 +80,7 @@ Each artist is `<a class="artist-card" href="[spotify]">` containing:
 | The Weeknd | R&B·Latin | 발렌틴 | `1Xyo4u8uXC1ZmMpatF05PJ` |
 | Tinashe | R&B·Latin | 영선 | `0NIIxcxNHmOoyBx03SfTCD` |
 | Bruno Mars | R&B·Latin | 이삭 | `0du5cEVh5yTK9QJze8zvh8` |
-| Bad Bunny | R&B·Latin | 유나 | `4q3ewBCX7sLwd24euuV69X` |
+| Bad Bunny | Latin | 유나 | `4q3ewBCX7sLwd24euuV69X` |
 | Cigarettes After Sex | Indie | 예은 | `1hCkSJcXREhrodeIHQnffn` |
 | Laufey | Indie | 진아 | `7gW0r5CkdEUMm42w9XpyZO` |
 | Coldplay | Indie | 진 | `4gzpq5DPGxSnKTe4SA8HAU` |

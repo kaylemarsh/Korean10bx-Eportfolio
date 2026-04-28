@@ -24,13 +24,14 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <div class="aurora-layer"></div>
     <div class="hero-content">
       <div class="photo-frame">
         <img src="photo.jpg" alt="지성" class="hero-photo" />
       </div>
       <div class="hero-text">
-        <p class="hero-sub">안녕하세요!</p>
-        <h1 class="hero-name">지성</h1>
+        <p class="hero-sub"><span class="tw-text"></span></p>
+        <h1 class="hero-name"><span class="tw-text"></span></h1>
         <p class="hero-tagline">Korean 10BX E-Portfolio</p>
       </div>
     </div>
@@ -128,7 +129,7 @@
           <div class="t-draft" hidden>영화를 아직 못 봤어요 :( 이번 학기가 끝나자마자 볼 거예요!</div>
         </div>
 
-        <div class="t-node" data-title="재미없는 시간" data-draft-caption="입원해 중" data-revised-caption="부상당한 날">
+        <div class="t-node" data-title="재미없는 시간" data-draft-caption="부상당한 날" data-revised-caption="입원해 중">
           <div class="t-circle">12</div>
           <div class="t-num-label">12과</div>
           <div class="t-draft-img" hidden>writing12_draft.jpg</div>
@@ -203,13 +204,28 @@
         <span class="proj-card-link">View Slides &nbsp;→</span>
       </a>
 
-      <div class="proj-card proj-card--soon reveal" style="--delay:0.3s">
+      <div class="proj-card proj-card--reflection reveal" style="--delay:0.3s" id="reflection-toggle">
         <div class="proj-card-icon">📝</div>
         <h3 class="proj-card-title">Reflections</h3>
-        <span class="proj-card-coming">Coming Soon</span>
+        <span class="proj-card-link proj-card-link--toggle">Read &nbsp;<span class="reflection-chevron">↓</span></span>
       </div>
 
     </div>
+
+    <div class="reflection-drawer" id="reflection-drawer">
+      <div class="reflection-drawer-inner">
+        <div class="reflection-col">
+          <h4 class="reflection-title">Group Project Reflection</h4>
+          <p class="reflection-text">반친구들과 재미있게 시간을 보냈기 때문에 그룹 프로젝트는 재미있었어요. 우리 팀 이름이 끔팀이었기 때문에 아이디어를 생각하는 동안 저는 꿈처럼 해본지 생각했어요. 이삭는 전체 영상을 편집했기 때문에 정말 도움이 되었어요. 다행히 광현하고 선종은 정말 좋은 배우예요. 우리가 잘했다고 생각했지만 조선완스는 영상을 진짜 좋아서 재일 좋은 영상 이길 수 없어요. 뮤직비디오 아이디어가 마음에 들어요. 그리고 뮤직비디오 편집을 정말 잘 했어요. 모든 영상이 좋다고 생각해서 우리 반은 아주 현명했어요.</p>
+        </div>
+        <div class="reflection-divider"></div>
+        <div class="reflection-col">
+          <h4 class="reflection-title">Individual Presentation Reflection</h4>
+          <p class="reflection-text">개인 발표는 잘 한 잘못한지 모르겠지만 재미있어서 좋은 일한것같아요. 반에 볶음밥 아는 사람이 많군요. 한국에 가기 전에 닭갈비를 몰라서 반에 닭갈비 모르는 사람이 많은 것 같지만 모두 저보다 더 한국분이라서 제가 틀렸어요. 다른 사람들은 저보다 슬라이드가 더 좋았기 때문에 다시 하면 더 좋게 만들 수 있을 것 같아요. 슬라이드가 발표를 정말 잘 만든다고 생각해요. 그리고 개인 발표 했기 때문에 한국어 실력이 늘은 것 같아요. 새로운 단어를 배웠어요. 개인 발표 해서 기뻐요.</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- REFLECTION -->
@@ -246,75 +262,157 @@
           <p class="fc-question">가장 좋아하는 가수는 누구일까요?</p>
         </div>
         <div class="flashcard-back">
-          <div class="genre-legend">
-            <span class="legend-item" style="--gc:#FF2D7A">K-Pop</span>
-            <span class="legend-item" style="--gc:#4ADE80">Indie</span>
-            <span class="legend-item" style="--gc:#FFCF00">Hip-Hop</span>
-            <span class="legend-item" style="--gc:#FF4520">Rock</span>
-            <span class="legend-item" style="--gc:#B44FFF">R&amp;B · Latin</span>
-            <span class="legend-item" style="--gc:#00CCDD">Electronic</span>
-          </div>
-          <div class="artist-grid">
-            <a class="artist-card" style="--gc:#FF2D7A" href="https://open.spotify.com/artist/2c3IakpImjWyeXNvyyGsdn" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Kim_jin_ho.png/330px-Kim_jin_ho.png" alt="SG Wannabe"></div>
-              <div class="artist-name">SG Wannabe</div><div class="artist-person">연재</div>
-            </a>
-            <a class="artist-card" style="--gc:#FF2D7A" href="https://open.spotify.com/artist/2hRQKC0gqlZGPrmUKbcchR" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/240919_SHINEE_Taemin.jpg/330px-240919_SHINEE_Taemin.jpg" alt="Shiny"></div>
-              <div class="artist-name">Shiny</div><div class="artist-person">하리</div>
-            </a>
-            <a class="artist-card" style="--gc:#FF2D7A" href="https://open.spotify.com/artist/6YVMFz59CuY7ngCxTxjpxE" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Karina_at_Love_Your_W_event_2025.jpg/330px-Karina_at_Love_Your_W_event_2025.jpg" alt="Aespa"></div>
-              <div class="artist-name">Aespa</div><div class="artist-person">준서</div>
-            </a>
-            <a class="artist-card" style="--gc:#FF2D7A" href="https://open.spotify.com/artist/4hnHLgMSOiqERWBL4jINP1" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Woonhak_of_BoyNextDoor_at_MMA_Awards%2C_2023_%2820231202%29.jpg/330px-Woonhak_of_BoyNextDoor_at_MMA_Awards%2C_2023_%2820231202%29.jpg" alt="BOYNEXTDOOR"></div>
-              <div class="artist-name">BOYNEXTDOOR</div><div class="artist-person">다혜</div>
-            </a>
-            <a class="artist-card" style="--gc:#FFCF00" href="https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg/330px-Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg" alt="Kanye West"></div>
-              <div class="artist-name">Kanye West</div><div class="artist-person">민종 · 선종</div>
-            </a>
-            <a class="artist-card" style="--gc:#FFCF00" href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Drake_at_The_Carter_Effect_2017_%2836818935200%29_%28cropped%29.jpg/330px-Drake_at_The_Carter_Effect_2017_%2836818935200%29_%28cropped%29.jpg" alt="Drake"></div>
-              <div class="artist-name">Drake</div><div class="artist-person">승원</div>
-            </a>
-            <a class="artist-card" style="--gc:#B44FFF" href="https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/The_Weeknd_Portrait_by_Brian_Ziff.jpg/330px-The_Weeknd_Portrait_by_Brian_Ziff.jpg" alt="The Weeknd"></div>
-              <div class="artist-name">The Weeknd</div><div class="artist-person">발렌틴</div>
-            </a>
-            <a class="artist-card" style="--gc:#B44FFF" href="https://open.spotify.com/artist/0NIIxcxNHmOoyBx03SfTCD" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Tinashe_at_Coachella_2024_-_04_%28cropped%29.jpg/330px-Tinashe_at_Coachella_2024_-_04_%28cropped%29.jpg" alt="Tinashe"></div>
-              <div class="artist-name">Tinashe</div><div class="artist-person">영선</div>
-            </a>
-            <a class="artist-card" style="--gc:#B44FFF" href="https://open.spotify.com/artist/0du5cEVh5yTK9QJze8zvh8" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Bruno_Mars_portrait.jpg" alt="Bruno Mars"></div>
-              <div class="artist-name">Bruno Mars</div><div class="artist-person">이삭</div>
-            </a>
-            <a class="artist-card" style="--gc:#B44FFF" href="https://open.spotify.com/artist/4q3ewBCX7sLwd24euuV69X" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Bad_Bunny_2019_by_Glenn_Francis_%28cropped%29.jpg/330px-Bad_Bunny_2019_by_Glenn_Francis_%28cropped%29.jpg" alt="Bad Bunny"></div>
-              <div class="artist-name">Bad Bunny</div><div class="artist-person">유나</div>
-            </a>
-            <a class="artist-card" style="--gc:#4ADE80" href="https://open.spotify.com/artist/1hCkSJcXREhrodeIHQnffn" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Greg_Gonzalez_on_CAS.jpg/330px-Greg_Gonzalez_on_CAS.jpg" alt="Cigarettes After Sex"></div>
-              <div class="artist-name">Cigarettes After Sex</div><div class="artist-person">예은</div>
-            </a>
-            <a class="artist-card" style="--gc:#4ADE80" href="https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Laufey_radio_city_music_hall_2024_%28cropped%29.jpg/330px-Laufey_radio_city_music_hall_2024_%28cropped%29.jpg" alt="Laufey"></div>
-              <div class="artist-name">Laufey</div><div class="artist-person">진아</div>
-            </a>
-            <a class="artist-card" style="--gc:#4ADE80" href="https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ChrisMartinManch030623_%28cropped%29.jpg/330px-ChrisMartinManch030623_%28cropped%29.jpg" alt="Coldplay"></div>
-              <div class="artist-name">Coldplay</div><div class="artist-person">진</div>
-            </a>
-            <a class="artist-card" style="--gc:#FF4520" href="https://open.spotify.com/artist/05fG473iIaoy82BF1aGhL8" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg/330px-20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg" alt="Slipknot"></div>
-              <div class="artist-name">Slipknot</div><div class="artist-person">단</div>
-            </a>
-            <a class="artist-card" style="--gc:#00CCDD" href="https://open.spotify.com/artist/3MekbRujJg5VZThubOlrkR" target="_blank" rel="noopener">
-              <div class="artist-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Ninajirachi_London_2026.png/330px-Ninajirachi_London_2026.png" alt="Ninajirachi"></div>
-              <div class="artist-name">Ninajirachi</div><div class="artist-person">세은</div>
-            </a>
+          <div class="artist-carousel" id="artist-carousel">
+            <div class="carousel-overflow">
+              <div class="carousel-track">
+
+                <!-- Slide 1: K-Pop -->
+                <div class="carousel-slide">
+                  <a class="carousel-card" style="--gc:#FF2D7A" href="https://open.spotify.com/artist/2c3IakpImjWyeXNvyyGsdn" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Kim_jin_ho.png/330px-Kim_jin_ho.png" alt="SG Wannabe"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">K-Pop</span>
+                      <div class="carousel-artist">SG Wannabe</div>
+                      <div class="carousel-person">연재</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#FF2D7A" href="https://open.spotify.com/artist/2hRQKC0gqlZGPrmUKbcchR" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/240919_SHINEE_Taemin.jpg/330px-240919_SHINEE_Taemin.jpg" alt="Shiny"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">K-Pop</span>
+                      <div class="carousel-artist">Shiny</div>
+                      <div class="carousel-person">하리</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#FF2D7A" href="https://open.spotify.com/artist/6YVMFz59CuY7ngCxTxjpxE" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Karina_at_Love_Your_W_event_2025.jpg/330px-Karina_at_Love_Your_W_event_2025.jpg" alt="Aespa"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">K-Pop</span>
+                      <div class="carousel-artist">Aespa</div>
+                      <div class="carousel-person">준서</div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Slide 2: K-Pop / Hip-Hop -->
+                <div class="carousel-slide">
+                  <a class="carousel-card" style="--gc:#FF2D7A" href="https://open.spotify.com/artist/4hnHLgMSOiqERWBL4jINP1" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Woonhak_of_BoyNextDoor_at_MMA_Awards%2C_2023_%2820231202%29.jpg/330px-Woonhak_of_BoyNextDoor_at_MMA_Awards%2C_2023_%2820231202%29.jpg" alt="BOYNEXTDOOR"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">K-Pop</span>
+                      <div class="carousel-artist">BOYNEXTDOOR</div>
+                      <div class="carousel-person">다혜</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#FFCF00" href="https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg/330px-Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg" alt="Kanye West"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">Hip-Hop</span>
+                      <div class="carousel-artist">Kanye West</div>
+                      <div class="carousel-person">민종 · 선종</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#FFCF00" href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Drake_at_The_Carter_Effect_2017_%2836818935200%29_%28cropped%29.jpg/330px-Drake_at_The_Carter_Effect_2017_%2836818935200%29_%28cropped%29.jpg" alt="Drake" style="object-position:center 20%;"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">Hip-Hop</span>
+                      <div class="carousel-artist">Drake</div>
+                      <div class="carousel-person">승원</div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Slide 3: R&B -->
+                <div class="carousel-slide">
+                  <a class="carousel-card" style="--gc:#B44FFF" href="https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/The_Weeknd_Portrait_by_Brian_Ziff.jpg/330px-The_Weeknd_Portrait_by_Brian_Ziff.jpg" alt="The Weeknd"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">R&amp;B</span>
+                      <div class="carousel-artist">The Weeknd</div>
+                      <div class="carousel-person">발렌틴</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#B44FFF" href="https://open.spotify.com/artist/0NIIxcxNHmOoyBx03SfTCD" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Tinashe_at_Coachella_2024_-_04_%28cropped%29.jpg/330px-Tinashe_at_Coachella_2024_-_04_%28cropped%29.jpg" alt="Tinashe"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">R&amp;B</span>
+                      <div class="carousel-artist">Tinashe</div>
+                      <div class="carousel-person">영선</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#B44FFF" href="https://open.spotify.com/artist/0du5cEVh5yTK9QJze8zvh8" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Bruno_Mars_portrait.jpg" alt="Bruno Mars"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">R&amp;B</span>
+                      <div class="carousel-artist">Bruno Mars</div>
+                      <div class="carousel-person">이삭</div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Slide 4: Latin / Indie -->
+                <div class="carousel-slide">
+                  <a class="carousel-card" style="--gc:#FF7122" href="https://open.spotify.com/artist/4q3ewBCX7sLwd24euuV69X" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Bad_Bunny_2019_by_Glenn_Francis_%28cropped%29.jpg/330px-Bad_Bunny_2019_by_Glenn_Francis_%28cropped%29.jpg" alt="Bad Bunny" style="object-position:center 20%;"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">Latin</span>
+                      <div class="carousel-artist">Bad Bunny</div>
+                      <div class="carousel-person">유나</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#4ADE80" href="https://open.spotify.com/artist/1hCkSJcXREhrodeIHQnffn" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Greg_Gonzalez_on_CAS.jpg/330px-Greg_Gonzalez_on_CAS.jpg" alt="Cigarettes After Sex"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">Indie</span>
+                      <div class="carousel-artist">Cigarettes After Sex</div>
+                      <div class="carousel-person">예은</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#4ADE80" href="https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Laufey_radio_city_music_hall_2024_%28cropped%29.jpg/330px-Laufey_radio_city_music_hall_2024_%28cropped%29.jpg" alt="Laufey"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">Indie</span>
+                      <div class="carousel-artist">Laufey</div>
+                      <div class="carousel-person">진아</div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Slide 5: Indie / Rock / Electronic -->
+                <div class="carousel-slide">
+                  <a class="carousel-card" style="--gc:#4ADE80" href="https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ChrisMartinManch030623_%28cropped%29.jpg/330px-ChrisMartinManch030623_%28cropped%29.jpg" alt="Coldplay"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">Indie</span>
+                      <div class="carousel-artist">Coldplay</div>
+                      <div class="carousel-person">진</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#FF4520" href="https://open.spotify.com/artist/05fG473iIaoy82BF1aGhL8" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg/330px-20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg" alt="Slipknot"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">Rock</span>
+                      <div class="carousel-artist">Slipknot</div>
+                      <div class="carousel-person">단</div>
+                    </div>
+                  </a>
+                  <a class="carousel-card" style="--gc:#00CCDD" href="https://open.spotify.com/artist/3MekbRujJg5VZThubOlrkR" target="_blank" rel="noopener">
+                    <div class="carousel-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Ninajirachi_London_2026.png/330px-Ninajirachi_London_2026.png" alt="Ninajirachi"></div>
+                    <div class="carousel-info">
+                      <span class="carousel-genre">Electronic</span>
+                      <div class="carousel-artist">Ninajirachi</div>
+                      <div class="carousel-person">세은</div>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <button class="carousel-btn carousel-prev" aria-label="Previous">&#8592;</button>
+              <span class="carousel-counter">1 / 5</span>
+              <button class="carousel-btn carousel-next" aria-label="Next">&#8594;</button>
+            </div>
           </div>
         </div>
       </div>
