@@ -398,7 +398,7 @@ body {
 .t-tag.revised { color: var(--blue); }
 
 .t-drawer {
-  margin-top: 2rem;
+  margin-top: 1rem;
   border: 1px solid var(--border);
   border-top: 3px solid var(--red);
   border-radius: 14px;
@@ -428,7 +428,7 @@ body {
   font-weight: 700;
   color: var(--text);
   text-align: center;
-  margin: 1.5rem 0 0.75rem;
+  margin: 1.5rem 0 0.35rem;
 }
 
 .t-drawer-note-text {
