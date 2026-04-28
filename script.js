@@ -40,25 +40,57 @@ document.querySelectorAll('.nav-links a').forEach(function (link) {
 
 // Timeline click-to-expand
 var tDrawer = document.querySelector('.t-drawer');
+var tDrawerCols = document.querySelector('.t-drawer-cols');
+var tDrawerTitle = document.querySelector('.t-drawer-title');
+var tNoteText = document.querySelector('.t-drawer-note-text');
 var tDraftText = document.querySelector('.t-drawer-draft-text');
 var tRevisedText = document.querySelector('.t-drawer-revised-text');
 var tDraftImg = document.querySelector('.t-drawer-draft-img');
 var tRevisedImg = document.querySelector('.t-drawer-revised-img');
+var tDraftCaption = document.querySelector('.t-drawer-draft-caption');
+var tRevisedCaption = document.querySelector('.t-drawer-revised-caption');
 var activeNode = null;
+
+function closeAll() {
+  if (activeNode) activeNode.classList.remove('t-node--active');
+  activeNode = null;
+  tDrawer.hidden = true;
+  tDrawer.classList.remove('t-drawer--white');
+  tDrawerTitle.hidden = true;
+  tNoteText.hidden = true;
+  tDraftCaption.hidden = true;
+  tRevisedCaption.hidden = true;
+  tDrawerCols.style.display = '';
+}
 
 document.querySelectorAll('.t-node').forEach(function (node) {
   node.addEventListener('click', function () {
-    if (activeNode === node) {
-      activeNode.classList.remove('t-node--active');
-      activeNode = null;
-      tDrawer.hidden = true;
-      return;
-    }
-    if (activeNode) activeNode.classList.remove('t-node--active');
+    if (activeNode === node) { closeAll(); return; }
+    closeAll();
     activeNode = node;
     node.classList.add('t-node--active');
+
+    var title = node.dataset.title || '';
+    tDrawerTitle.textContent = title;
+    tDrawerTitle.hidden = !title;
+
+    if (node.classList.contains('t-node--single')) {
+      tNoteText.textContent = node.querySelector('.t-draft').textContent;
+      tNoteText.hidden = false;
+      tDrawerCols.style.display = 'none';
+      tDrawer.hidden = false;
+      return;
+    }
+
+    tNoteText.hidden = true;
+    tDrawerCols.style.display = '';
+    if (node.classList.contains('t-node--white-text')) {
+      tDrawer.classList.add('t-drawer--white');
+    } else {
+      tDrawer.classList.remove('t-drawer--white');
+    }
     tDraftText.textContent = node.querySelector('.t-draft').textContent;
-    tRevisedText.textContent = node.querySelector('.t-revised').textContent;
+    tRevisedText.innerHTML = node.querySelector('.t-revised').innerHTML;
 
     var draftImgEl = node.querySelector('.t-draft-img');
     if (draftImgEl) {
@@ -78,16 +110,20 @@ document.querySelectorAll('.t-node').forEach(function (node) {
       tRevisedImg.hidden = true;
     }
 
+    var draftCaption = node.dataset.draftCaption || '';
+    tDraftCaption.textContent = draftCaption;
+    tDraftCaption.hidden = !(draftCaption && !tDraftImg.hidden);
+
+    var revisedCaption = node.dataset.revisedCaption || '';
+    tRevisedCaption.textContent = revisedCaption;
+    tRevisedCaption.hidden = !(revisedCaption && !tRevisedImg.hidden);
+
     tDrawer.hidden = false;
   });
 });
 
 document.addEventListener('click', function (e) {
-  if (activeNode && !e.target.closest('.t-node')) {
-    activeNode.classList.remove('t-node--active');
-    activeNode = null;
-    tDrawer.hidden = true;
-  }
+  if (activeNode && !e.target.closest('.t-node')) closeAll();
 });
 
 // Flashcard flip — both cards: compact front, expands to back on click

@@ -8,7 +8,8 @@
       "Bash(grep *)",
       "Read(//Users/kaylemarsh/Desktop/**)",
       "Bash(python3 *)",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(sips *)"
     ]
   }
 }
