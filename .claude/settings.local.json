@@ -9,7 +9,9 @@
       "Read(//Users/kaylemarsh/Desktop/**)",
       "Bash(python3 *)",
       "Bash(xxd)",
-      "Bash(sips *)"
+      "Bash(sips *)",
+      "Bash(git checkout *)",
+      "Bash(open *)"
     ]
   }
 }
