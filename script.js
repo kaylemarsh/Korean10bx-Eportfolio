@@ -89,7 +89,7 @@ document.querySelectorAll('.t-node').forEach(function (node) {
     } else {
       tDrawer.classList.remove('t-drawer--white');
     }
-    tDraftText.textContent = node.querySelector('.t-draft').textContent;
+    tDraftText.innerHTML = node.querySelector('.t-draft').innerHTML;
     tRevisedText.innerHTML = node.querySelector('.t-revised').innerHTML;
 
     var draftImgEl = node.querySelector('.t-draft-img');
@@ -195,14 +195,30 @@ window.addEventListener('scroll', function () {
   });
 }, { passive: true });
 
+// Reflection language toggle
+(function () {
+  var cb = document.getElementById('reflection-lang-cb');
+  var ko = document.getElementById('reflection-ko');
+  var en = document.getElementById('reflection-en');
+  if (!cb || !ko || !en) return;
+  cb.addEventListener('change', function () {
+    ko.hidden = cb.checked;
+    en.hidden = !cb.checked;
+  });
+})();
+
 // Reflection drawer toggle
 (function () {
   var toggle = document.getElementById('reflection-toggle');
   var drawer = document.getElementById('reflection-drawer');
   if (!toggle || !drawer) return;
+  var chevron = toggle.querySelector('.reflection-chevron');
   toggle.addEventListener('click', function () {
+    var scrollY = window.scrollY;
     var isOpen = drawer.classList.toggle('open');
     toggle.classList.toggle('active', isOpen);
+    if (chevron) chevron.textContent = isOpen ? '↑' : '→';
+    window.scrollTo({ top: scrollY, behavior: 'instant' });
   });
 })();
 
